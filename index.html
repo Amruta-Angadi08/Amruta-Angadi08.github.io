@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amruta Mahantesh Angadi | Portfolio</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f6f9;
+        }
+
+        .container {
+            background: white;
+            width: 100%;
+            max-width: 800px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        /* The Globe Icon */
+        .icon-wrapper {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px auto;
+            position: relative;
+        }
+
+        .icon-wrapper svg {
+            width: 100%;
+            height: 100%;
+            fill: #c5cad4;
+        }
+
+        /* Text Styling */
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            color: #666;
+            font-weight: 400;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #888;
+            margin-bottom: 30px;
+        }
+
+        .links {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            margin: 5px 10px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            background-color: #c5cad4;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #a8aebc;
+            transform: translateY(-2px);
+        }
+
+        .btn-dark {
+            background-color: #333;
+        }
+
+        .btn-dark:hover {
+            background-color: #000;
+        }
+
+        .btn-resume {
+            background-color: #4a90e2;
+        }
+        .btn-resume:hover {
+            background-color: #357abd;
+        }
+
+        /* Section Styling */
+        .section {
+            margin: 40px 0;
+            text-align: left;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        
+        .section h3 {
+            color: #444;
+            margin-bottom: 15px;
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill-tag {
+            background: #f0f0f0;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .education-item {
+            margin-bottom: 15px;
+        }
+        .education-item h4 {
+            color: #333;
+        }
+        .education-item p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        @media(min-width: 600px) {
+            .project-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .project-card {
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            transition: 0.3s;
+        }
+        .project-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transform: translateY(-3px);
+        }
+        .project-card h4 {
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+        .project-card p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+        }
+        .project-tech {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        .project-tech span {
+            background: #e8f0fe;
+            color: #4a90e2;
+            padding: 3px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Resume Upload Section */
+        .resume-upload-area {
+            background: #f8f9fa;
+            border: 2px dashed #c5cad4;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .resume-upload-area input[type="file"] {
+            display: none;
+        }
+        .resume-upload-area label {
+            cursor: pointer;
+            color: #4a90e2;
+            font-weight: 600;
+        }
+        .resume-preview {
+            margin-top: 15px;
+            display: none;
+        }
+        .resume-preview iframe {
+            width: 100%;
+            height: 300px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- The Globe Icon -->
+        <div class="icon-wrapper">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="45" stroke="#c5cad4" stroke-width="8" fill="none"/>
+                <path d="M50 5 C 70 5, 95 25, 95 50 C 95 70, 80 85, 65 85 C 65 70, 65 60, 75 50 C 80 45, 85 45, 85 45 C 85 30, 70 20, 50 20 Z" fill="#c5cad4" opacity="0.8"/>
+                <path d="M50 95 C 30 95, 5 75, 5 50 C 5 30, 20 15, 35 15 C 35 30, 35 40, 25 50 C 20 55, 15 55, 15 55 C 15 70, 30 80, 50 80 Z" fill="#c5cad4" opacity="0.8"/>
+                <rect x="42" y="30" width="16" height="40" fill="#c5cad4" opacity="0.8"/>
+                <rect x="30" y="55" width="40" height="16" fill="#c5cad4" opacity="0.8"/>
+            </svg>
+        </div>
+
+        <!-- YOUR DETAILS -->
+        <h1>Amruta Mahantesh Angadi</h1>
+        <h2>BSc Computer Science Student</h2>
+        <p class="subtitle">Passionate about coding, web development, and technology</p>
+
+        <div class="links">
+            <a href="https://github.com/your-username" class="btn btn-dark">GitHub</a>
+            <a href="https://linkedin.com/in/your-linkedin" class="btn btn-dark">LinkedIn</a>
+            <a href="mailto:your.email@example.com" class="btn">Email</a>
+        </div>
+
+        <!-- About Me -->
+        <div class="section">
+            <h3>About Me</h3>
+            <p>I am currently pursuing my BSc in Computer Science with a strong interest in cloud computing, web development, and building reliable systems. I enjoy solving real-world problems through technology and creating efficient digital solutions.</p>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <h3>Education</h3>
+            <div class="education-item">
+                <h4>Bachelor of Science in Computer Science</h4>
+                <p><strong>JSS Shri Manjunatheshwar UG and PG Studies, Dharwad</strong></p>
+                <p><em>Under Karnataka University</em> | 2023 - Present</p>
+                <p>Currently pursuing my degree with a focus on programming, cloud computing, web development, database management, and computer fundamentals.</p>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="section">
+            <h3>Skills</h3>
+            <div class="skills-list">
+                <span class="skill-tag">HTML & CSS</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">C Programming</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Cloud Computing</span>
+                <span class="skill-tag">Git & GitHub</span>
+            </div>
+        </div>
+
+        <!-- Projects  -->
+        <div class="section">
+            <h3>Projects</h3>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h4>☁️ Cloud Based Disaster Recovery System</h4>
+                    <p><strong>Overview:</strong> A robust cloud-based disaster recovery system designed to ensure data availability and business continuity during unforeseen failures or natural disasters.</p>
+                    
+                    <p><strong>Key Features:</strong></p>
+                    <ul style="margin-left: 20px; color: #666; font-size: 0.95rem; line-height: 1.8;">
+                        <li>Automated data backup and replication across multiple cloud regions</li>
+                        <li>Real-time monitoring and alerting system for failure detection</li>
+                        <li>Fast recovery mechanisms with minimal downtime (RTO/RPO optimization)</li>
+                        <li>Cost-effective storage management using cloud storage solutions</li>
+                        <li>Secure data encryption and access control for sensitive information</li>
+                    </ul>
+
+                    <p><strong>Technologies Used:</strong></p>
+                    <div class="project-tech">
+                        <span>Cloud Storage</span>
+                        <span>Javascript</span>
+                        <span>Database:MongoDB</span>
+                        <span>Automation Scripts</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- RESUME UPLOAD SECTION -->
+        <div class="section">
+            <h3>My Resume</h3>
+            <div class="resume-upload-area" id="resumeArea">
+                <p style="margin-bottom: 10px; color: #666;">Upload your resume (PDF format)</p>
+                <input type="file" id="resumeInput" accept=".pdf">
+                <label for="resumeInput" class="btn btn-resume">📄 Choose Resume PDF</label>
+                <p style="margin-top: 10px; font-size: 0.8rem; color: #999;">Click the button to select your resume file from your computer</p>
+                
+                <div class="resume-preview" id="resumePreview">
+                    <iframe id="resumeIframe"></iframe>
+                    <a href="#" id="downloadResumeBtn" class="btn btn-dark" style="margin-top: 10px; display: inline-block;">⬇️ Download Resume</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="section" style="border-top: none; padding-top: 0; text-align: center;">
+            <h3>Get in Touch</h3>
+            <p style="color: #666;">Feel free to connect with me for collaboration or opportunities.</p>
+            <div class="links" style="margin-top: 15px;">
+                <a href="mailto:your.email@example.com" class="btn" style="background-color: #c5cad4; color: white;">Email Me</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Resume Upload -->
+    <script>
+        const resumeInput = document.getElementById('resumeInput');
+        const resumePreview = document.getElementById('resumePreview');
+        const resumeIframe = document.getElementById('resumeIframe');
+        const downloadResumeBtn = document.getElementById('downloadResumeBtn');
+        const resumeArea = document.getElementById('resumeArea');
+
+        resumeInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const fileURL = URL.createObjectURL(file);
+                
+                // Show preview
+                resumePreview.style.display = 'block';
+                resumeIframe.src = fileURL;
+                
+                // Setup download
+                downloadResumeBtn.href = fileURL;
+                downloadResumeBtn.download = 'Amruta_Angadi_Resume.pdf';
+                
+                // Add a small success message
+                const successMsg = document.createElement('p');
+                successMsg.style.color = '#4a90e2';
+                successMsg.style.marginTop = '10px';
+                successMsg.style.fontWeight = 'bold';
+                successMsg.textContent = '✅ Resume uploaded successfully!';
+                
+                // Remove old success message if exists
+                const oldMsg = resumeArea.querySelector('.success-msg');
+                if (oldMsg) oldMsg.remove();
+                
+                successMsg.classList.add('success-msg');
+                resumeArea.appendChild(successMsg);
+            }
+        });
+    </script>-
+
+</body>
+</html>
